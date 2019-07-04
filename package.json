@@ -13,7 +13,8 @@
   "dependencies": {
     "load-script": "^1.0.0",
     "lodash": "^4.3.0",
-    "sister": "^3.0.0"
+    "sister": "^3.0.0",
+    "snyk": "^1.189.0"
   },
   "description": "YouTube IFrame Player API abstraction.",
   "devDependencies": {
@@ -57,7 +58,10 @@
     "lint": "eslint ./src ./test",
     "watch": "npm-watch",
     "precommit": "npm run lint && npm run test",
-    "test": "NODE_ENV=development ava --verbose && npm run lint && npm run build"
+    "test": "NODE_ENV=development ava --verbose && npm run lint && npm run build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
-  "version": "4.0.1"
+  "version": "4.0.1",
+  "snyk": true
 }
